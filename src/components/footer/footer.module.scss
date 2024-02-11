@@ -1,0 +1,41 @@
+.footer {
+    padding: 8px;
+    width: 100%;
+    max-width: 6cm;
+    box-sizing: border-box;
+    position: sticky;
+    bottom: 16px;
+    border-radius: 8px 8px 8px 8px;
+    background: black;
+    color: white;
+    fill: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttons_container{
+    width: 100%;
+    max-width: 6cm;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button{
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: transparent;
+    border: 0;
+    fill: hsla(50%, 0, 50, 50%);
+    :hover{
+        fill: hsla(50%, 0, 50, 100%);
+        transition: .3s;
+    }
+    & .selected{
+        fill: hsla(50%, 0, 100, 100%);
+        transition: .3s;
+    }
+}

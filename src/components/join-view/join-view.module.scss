@@ -1,0 +1,33 @@
+.root {
+    padding: 8px;
+    max-width: 8cm;
+    align-self: end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+input {
+    text-align: center;
+}
+
+.recent-activity-view {
+    width: fit-content;
+    max-width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    overflow: scroll;
+    justify-content: flex-start;
+}
+
+.tile-form-container {
+    width: 90%;
+    max-width: 8cm;
+
+}

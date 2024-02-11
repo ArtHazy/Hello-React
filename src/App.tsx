@@ -1,61 +1,68 @@
-import { useState } from 'react';
 import classNames from 'classnames';
-import { ReactComponent as ReactLogo } from './assets/react.svg';
-import { ReactComponent as ViteLogo } from './assets/vite.svg';
-import { ReactComponent as TypescriptLogo } from './assets/typescript.svg';
-import { ReactComponent as ScssLogo } from './assets/scss.svg';
+import { useState } from 'react';
 import styles from './App.module.scss';
+import { Choice, Question, Quiz, User } from './classes';
+import { Footer } from './components/footer/footer';
+import { Header } from './components/header/header';
+import Header_module from './components/header/header.module.scss';
+import { JoinView } from './components/join-view/join-view';
+import { LibraryView } from './components/library-view/library-view';
+import { ProfileView } from './components/profile-view/profile-view';
+import { QuizEditView } from './components/quiz-edit-view/quiz-edit-view';
 
-function App() {
-    const [count, setCount] = useState(0);
+
+export const user: User = new User(
+    'My Name',
+    (
+        <img
+            className="picture"
+            src="https://i.pinimg.com/564x/2d/fd/16/2dfd168f0d2d01a92215c6331c5ba826.jpg"
+        ></img>
+    ),
+    [
+        new Quiz('quiz1', [new Question('question1', [new Choice('choice-A', false), new Choice('choice-B', true)]), new Question('question2', [new Choice('choice-A', true), new Choice('choice-B', false)])]),
+        {title:'quiz3', questions:[{text:'question3', choices:[{text: 'choice-A', isCorrect: false}, {text: 'choice-B', isCorrect: true}]}]}
+    ]
+);
+
+export const views = {
+    library: {name: 'library', content: null },
+    join: {name: 'join', content: null },
+    profile: {name: 'profile', content: null  },
+    quiz_edit: {name:'quiz_edit', content: null  },
+};
+
+export let quiz_gl = {quiz: new Quiz('',[]), index: null};
+
+
+export default function App() {
+    const [view_name, set_view_name] = useState(views.join.name);
+
+    console.log(view_name);
+    console.log(user);
+    
+    views.library.content = LibraryView({set_view_name})
+    views.quiz_edit.content = QuizEditView({quiz: quiz_gl.quiz, set_view_name: set_view_name})
+    views.profile.content = ProfileView({})
+    views.join.content = JoinView({})
+
 
     return (
-        <div className={styles.App}>
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <ViteLogo
-                        height="6em"
-                        width="6em"
-                        className={classNames(styles.logo)}
-                        title="Vite logo"
-                    />
-                </a>
-                <a href="https://reactjs.org" target="_blank">
-                    <ReactLogo
-                        height="6em"
-                        width="6em"
-                        className={classNames(styles.logo, styles.react)}
-                        title="React logo"
-                    />
-                </a>
-                <a href="https://www.typescriptlang.org/" target="_blank">
-                    <TypescriptLogo
-                        height="6em"
-                        width="6em"
-                        className={classNames(styles.logo, styles.ts)}
-                        title="Typescript logo"
-                    />
-                </a>
-                <a href="https://sass-lang.com/" target="_blank">
-                    <ScssLogo
-                        height="6em"
-                        width="6em"
-                        className={classNames(styles.logo, styles.scss)}
-                        title="SCSS logo"
-                    />
-                </a>
-            </div>
-            <div className={styles.card}>
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className={styles['read-the-docs']}>
-                Click on the Vite and React logos to learn more
-            </p>
+        <div className={classNames(styles.App, styles['padding-default'])}>
+            <Header>
+                {view_name == views.profile.name ? (
+                    <div className={'hstack '+Header_module['user-main-info-container']} style={{justifyContent: 'space-evenly', alignItems:'center'}}>
+                        <div>{user.name}</div>
+                        {user.profile_picture}
+                    </div>
+                ) : (
+                    <div>{view_name}</div>
+                )}
+            </Header>
+
+            {views[view_name].content}
+
+            <Footer view_name={view_name} set_view_name={set_view_name} />
         </div>
     );
 }
-
-export default App;

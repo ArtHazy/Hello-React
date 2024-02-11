@@ -1,0 +1,18 @@
+.header {
+    padding: 8px;
+    position: sticky;
+    box-sizing: border-box;
+    top: 0;
+    border-radius: 0px 0px 8px 8px;
+    width: 100%;
+    background: black;
+    color: white;
+    fill: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.user-main-info-container{
+    width: 100%;
+    flex-shrink: 0;
+}

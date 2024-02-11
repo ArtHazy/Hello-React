@@ -1,0 +1,23 @@
+.root {
+    width: 100%;
+    height: fit-content;
+    min-height: 2cm;
+    max-width: 12cm;
+    text-align: center;
+    background: rgb(222, 222, 222);
+    border-radius: 8px;
+    padding: 8px;
+    overflow: scroll;
+    box-sizing: border-box;
+
+}
+
+.tile-form {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
