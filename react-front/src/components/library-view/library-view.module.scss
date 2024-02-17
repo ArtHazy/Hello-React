@@ -1,0 +1,14 @@
+.LibraryView {
+    width: 100%;
+    height: fit-content;
+    max-width: 30cm;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.grid-tile-container{
+  display: grid;
+  gap: .5cm;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(4.4cm, 1fr));
+}

@@ -1,0 +1,37 @@
+.Tile_QuestionEdit {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    min-height: 2cm;
+    text-align: start;
+    border-radius: 8px;
+    box-sizing: border-box;
+    max-width: 12cm;
+    overflow: scroll;
+}
+
+input {
+    width: 90%;
+    height: fit-content;
+    padding: .3em;
+    font-size: 1em;
+    box-sizing: border-box;
+    background: transparent;
+    border: transparent;
+    flex-grow: 0;
+}
+
+.radio {
+    position: static;
+    width: fit-content;
+    margin: 8px;
+}
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+button{
+    border-radius: .2cm;
+}

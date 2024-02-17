@@ -1,0 +1,22 @@
+.JoinView {
+    box-sizing: border-box;
+}
+
+input {
+    text-align: center;
+}
+
+.recent-activity-view {
+    width: fit-content;
+    max-width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    overflow: scroll;
+    justify-content: flex-start;
+}
+
+.tile-form-container {
+    width: 90%;
+    max-width: 8cm;
+
+}
