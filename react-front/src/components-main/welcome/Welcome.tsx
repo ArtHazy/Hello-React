@@ -1,5 +1,5 @@
 import { TileForm } from '../../components/tile/tile';
-import { back_port, max_email_length, max_name_length, max_password_length, server_ip } from '../../../../data';
+import {limits} from '../app/App';
 import styles from './Welcome.module.css';
 
 
@@ -11,8 +11,8 @@ export const Login = () => {
                 <div style={{ fontSize: '2em' }}>LOGIN</div>
 
                 <TileForm>
-                    <input id="email-input" type="email" placeholder='email' maxLength={max_email_length} />
-                    <input id="password-input" type="password" placeholder='password' maxLength={max_password_length} />
+                    <input id="email-input" type="email" placeholder='email' maxLength={limits.maxEmailLength} />
+                    <input id="password-input" type="password" placeholder='password' maxLength={limits.maxPasswordLength} />
                 </TileForm>
                 <button onClick={() => {
                     let email = document.getElementById('email-input').value;
@@ -49,9 +49,9 @@ export const Register = () => {
                 <div style={{ fontSize: '2em' }}>REGISTER</div>
 
                 <TileForm>
-                    <input id="username-input" type="text" placeholder='username' maxLength={max_name_length} />
-                    <input id="email-input" type="email" placeholder='email' maxLength={max_email_length} />
-                    <input id="password-input" type="password" placeholder='password' maxLength={max_password_length} />
+                    <input id="username-input" type="text" placeholder='username' maxLength={limits.maxNameLength} />
+                    <input id="email-input" type="email" placeholder='email' maxLength={limits.maxEmailLength} />
+                    <input id="password-input" type="password" placeholder='password' maxLength={limits.maxPasswordLength} />
                 </TileForm>
                 <button onClick={() => {
                     let username = document.getElementById('username-input').value;
