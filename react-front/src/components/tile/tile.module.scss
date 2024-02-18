@@ -8,12 +8,13 @@
     padding: 8px;
     //overflow: scroll;
     box-sizing: border-box;
-    color: black;
+    color: white;
+    background-color: var(--color-bg2);
 }
 
 .tile-form {
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 2px solid rgb(255, 255, 255);
+    background-color: var(--color-bg2) !important;
+    //border: 2px solid rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: center;

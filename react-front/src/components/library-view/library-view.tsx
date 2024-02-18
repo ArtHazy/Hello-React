@@ -29,12 +29,11 @@ export const LibraryView = ({ className, set_view_name }: LibraryViewProps) => {
         let scrollView = document.getElementById('view-container')
         console.log('scrll height ' + scrollView?.scrollHeight);
         scrollView ? scrollView.scrollTop = scrollView.scrollHeight : null
-        //console.log(scrollView?.scrollHeight);
     }, [flag])
 
 
     return (
-        <div className={classNames(styles.LibraryView, className)}>
+        <div style={{alignItems:'normal'}} className={classNames('view', styles.LibraryView, className)}>
             <div className={styles['grid-tile-container']}>
                 {user.quizzes?.map((quiz, index) => {
                     return (
@@ -62,7 +61,7 @@ export const LibraryView = ({ className, set_view_name }: LibraryViewProps) => {
                         user.quizzes.length < limits.maxQuizes ? user.quizzes.push(new Quiz('new', [])) : alert_limit()
                         update()
                     }}>
-                        <AddIcon />
+                        <svg className='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" /></svg>
                     </button>
                 </div>
             </Footer>

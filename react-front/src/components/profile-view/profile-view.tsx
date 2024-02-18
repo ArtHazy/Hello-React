@@ -16,11 +16,13 @@ export const ProfileView = ({ className }: ProfileViewProps) => {
     return <div className={classNames(styles.ProfileView, className)}>
         <TileForm>
             <div>edit name</div>
+            <div className='spacer-default'></div>
             <input value={user.name} maxLength={limits.maxNameLength} onChange={(e)=>{
                 user.name = e.target.value
                 store_user(user)
                 update();
             }}/>
+            <div className='spacer-default'></div>
             <button onClick={()=>{
                 let user = JSON.parse(localStorage.getItem('self-user') || '{}') 
                 console.log(user);

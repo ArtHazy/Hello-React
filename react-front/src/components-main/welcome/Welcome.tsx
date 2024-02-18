@@ -11,7 +11,8 @@ export const Login = () => {
                 <div style={{ fontSize: '2em' }}>LOGIN</div>
 
                 <TileForm>
-                    <input id="email-input" type="email" placeholder='email' maxLength={limits.maxEmailLength} />
+                    <input id="email-input" type="email" value='0000' placeholder='email' maxLength={limits.maxEmailLength} />
+                    <div className='spacer-default'></div>
                     <input id="password-input" type="password" placeholder='password' maxLength={limits.maxPasswordLength} />
                 </TileForm>
                 <button onClick={() => {
@@ -33,7 +34,7 @@ export const Login = () => {
                         })
                     })
                 }}>login</button>
-
+                <div className='spacer-default'></div>
                 <a href="/register">
                     <button>register</button>
                 </a>
@@ -50,7 +51,9 @@ export const Register = () => {
 
                 <TileForm>
                     <input id="username-input" type="text" placeholder='username' maxLength={limits.maxNameLength} />
+                    <div className='spacer-default'></div>
                     <input id="email-input" type="email" placeholder='email' maxLength={limits.maxEmailLength} />
+                    <div className='spacer-default'></div>
                     <input id="password-input" type="password" placeholder='password' maxLength={limits.maxPasswordLength} />
                 </TileForm>
                 <button onClick={() => {
@@ -68,11 +71,15 @@ export const Register = () => {
                     }).then(res => {
                         res.json().then(json =>{
                             console.log(json);
-                            res.ok ? (localStorage.setItem('self-user', JSON.stringify(json)), window.location.href='/app') : alert('error')
+                            res.ok ? (
+                                localStorage.setItem('self-user', JSON.stringify(json)), window.location.href='/app',
+                                alert ('registered')
+                                ) : alert('error')
                         })
                     })
 
                 }}>Register</button>
+                <div className='spacer-default'></div>
 
                 <a href="/">
                     <button>Login</button>

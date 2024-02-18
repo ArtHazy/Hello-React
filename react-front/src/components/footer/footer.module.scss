@@ -17,7 +17,7 @@
     width: 100%;
     max-width: 6cm;
     padding: 8px;
-    background: black;
+    background: var(--color-hd-ft);
     border-radius: 8px 8px 8px 8px;
     display: flex;
     flex-direction: row;
@@ -42,7 +42,7 @@
     // }
 }
 .selected{
-    fill: hsla(100%, 0, 80, 100%);
+    fill: var(--color-acc) ;
     transition: .3s;
     scale: 1.2;
     // :hover{

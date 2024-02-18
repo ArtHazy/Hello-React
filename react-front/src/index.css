@@ -1,8 +1,10 @@
 :root {
-  --color-accent: rgba(255, 19, 19, 0.5);
-  --body-background: rgb(38, 53, 71);
-  --color2: rgba(255,255,255,0.5);
-  --color3: rgba(255,255,255,0.5);
+  --color-acc: rgba(150,180,240);
+  --color-acc-faded: rgba(150,180,240,0.8);
+  --color-bg: rgb(41,43,61);
+  --color-text: rgba(230,230,240);
+  --color-bg2: rgba(50,60,80);
+  --color-hd-ft: rgb(28, 32, 47);
 }
 
 html,body{
@@ -13,13 +15,34 @@ html,body{
     overflow: hidden;
 }
 body{
-  background-color: var(--body-background)
+  background-color: var(--color-bg)
 }
 button{
-  background-color: rgba(245, 245, 245, 0.481);
-  border: 2px solid whitesmoke;
+  background-color: var(--color-acc-faded);
+  border: 0px solid whitesmoke;
   color: black;
+  fill: var(--color-acc);
+  color: var(--color-text);
   /* cursor: pointer; */
+}
+input{
+  color: var(--color-text);
+  fill: var(--color-text);
+  border: 2px solid var(--color-acc-faded) !important;
+  padding: 4px !important;
+  border-radius: 8px;
+} 
+h1,h2,h3,h4,h5,h6{
+  color: var(--color-text);
+}
+
+.view{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
 }
 
 

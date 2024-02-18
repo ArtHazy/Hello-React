@@ -64,6 +64,8 @@ export default function App() {
                             <div>{user.name}</div>
                             {user.profile_picture}
                         </div>
+                    ) : view_name == views.quiz_edit.name ? (
+                        <div>{quiz_gl.quiz.title}</div>
                     ) : (
                         <div>{view_name}</div>
                     )}
